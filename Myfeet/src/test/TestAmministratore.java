@@ -43,7 +43,7 @@ public class TestAmministratore {
 		for(Cliente c : result) {
 			System.out.println(c.toString());
 		}
-		assertEquals(result.size(),2); //PROVA	
+		assertEquals(result.size(),2); //PROVA	a
 	}
 }
 
