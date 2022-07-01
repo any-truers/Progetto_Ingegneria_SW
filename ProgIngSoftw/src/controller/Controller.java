@@ -11,7 +11,7 @@ public class Controller {
 		this.dbConnection = null;
 		try { 
 			Class.forName("com.ibm.db2.jcc.DB2Driver");
-			this.dbConnection = DriverManager.getConnection("jdbc:db2://diva.deis.unibo.it:50000/tw_stud", "00934137", "xxxxxx");
+			this.dbConnection = DriverManager.getConnection("jdbc:db2://diva.deis.unibo.it:50000/tw_stud", "0000000", "xxxx");
       }
       catch (ClassNotFoundException e) {
           throw new PersistenceException(e.getMessage());
