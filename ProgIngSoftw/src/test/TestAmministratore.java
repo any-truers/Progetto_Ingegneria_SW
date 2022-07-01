@@ -43,7 +43,7 @@ public class TestAmministratore {
 		for(Cliente c : result) {
 			System.out.println(c.toString());
 		}
-		assertEquals(result.size(),1);	
+		assertEquals(result.size(),1);	//TEST COMMENTOg
 	}
 }
 
