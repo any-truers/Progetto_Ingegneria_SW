@@ -19,6 +19,6 @@ public class Controller {
       catch(SQLException e) {
           throw new PersistenceException(e.getMessage());
       }
-		return this.dbConnection;
+		return this.dbConnection; 
 	}
 }
