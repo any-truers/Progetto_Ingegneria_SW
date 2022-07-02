@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <Label layoutX="308.0" layoutY="26.0" text="Carica un nuovo allenamento">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <Pane layoutX="-2.0" prefHeight="600.0" prefWidth="140.0">
+               <children>
+                  <VBox prefHeight="110.0" prefWidth="140.0" style="-fx-background-color: #23ad5a;">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="143.0">
+                           <children>
+                              <ImageView fx:id="imageHome" fitHeight="55.0" fitWidth="48.0" onMouseClicked="#returnHome" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@photo5834887297420605451%20(1).jpg" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="buttonHome" mnemonicParsing="false" onAction="#returnHome" prefHeight="39.0" prefWidth="77.0" style="-fx-background-color: transparent;" text="Home" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_LEFT" layoutY="110.0" prefHeight="491.0" prefWidth="132.0" style="-fx-background-color: #23ad5a;">
+                     <children>
+                        <ImageView fitHeight="110.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Logo.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <GridPane layoutX="237.0" layoutY="155.0" prefHeight="290.0" prefWidth="526.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Titolo:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="textTitolo" prefHeight="25.0" prefWidth="193.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Categoria:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="textCategoria" editable="false" prefHeight="25.0" prefWidth="193.0" text="Running">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Durata (min):">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="spinnerDurata" editable="true" prefHeight="31.0" prefWidth="193.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Spinner>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Calorie bruciate (Kcal):">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="spinnerCalorie" editable="true" prefHeight="31.0" prefWidth="193.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Spinner>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="Livello di difficoltà:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="choiceDifficolta" prefHeight="25.0" prefWidth="193.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="File Video:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="buttonAddFile" mnemonicParsing="false" onAction="#addFile" style="-fx-border-color: #23ad5a; -fx-background-color: #ffffff;" text="Add File">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Label fx:id="labelNomeFile" text="BasiDiCorsa.mp4">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+            <Button fx:id="buttonCaricaAllenamento" layoutX="353.0" layoutY="487.0" mnemonicParsing="false" onAction="#caricaAllenamento" prefHeight="25.0" prefWidth="296.0" style="-fx-background-color: #23ad5a;" text="Carica" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
