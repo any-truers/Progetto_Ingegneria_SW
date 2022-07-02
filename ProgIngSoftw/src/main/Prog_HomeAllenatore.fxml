@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.HomeAllenatoreController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <Label layoutX="474.0" layoutY="27.0" text="Home">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <Pane layoutX="-2.0" prefHeight="600.0" prefWidth="140.0">
+               <children>
+                  <VBox prefHeight="110.0" prefWidth="140.0" style="-fx-background-color: #23ad5a;">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="143.0">
+                           <children>
+                              <ImageView fx:id="imageHome" fitHeight="55.0" fitWidth="48.0" onMouseClicked="#returnHome" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@photo5834887297420605451%20(1).jpg" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="buttonHome" mnemonicParsing="false" onAction="#returnHome" prefHeight="39.0" prefWidth="77.0" style="-fx-background-color: transparent;" text="Home" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_LEFT" layoutY="110.0" prefHeight="491.0" prefWidth="132.0" style="-fx-background-color: #23ad5a;">
+                     <children>
+                        <ImageView fitHeight="110.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Logo.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <GridPane alignment="CENTER" layoutX="155.0" layoutY="99.0" prefHeight="338.0" prefWidth="840.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="475.0" minWidth="10.0" prefWidth="419.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="424.0" minWidth="10.0" prefWidth="419.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="buttonRicerca" mnemonicParsing="false" onAction="#ricerca" style="-fx-background-color: #23ad5a;" text="Ricerca" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonAllenatori" mnemonicParsing="false" onAction="#listaAllenatori" style="-fx-background-color: #23ad5a;" text="I miei allenatori" textFill="WHITE" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonAggiungi" mnemonicParsing="false" onAction="#aggiungiAllenamento" style="-fx-background-color: #23ad5a;" text="Aggiungi allenamento" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonRimuovi" mnemonicParsing="false" onAction="#rimuoviAllenamento" style="-fx-background-color: #23ad5a;" text="Rimuovi allenamento" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+            <GridPane layoutX="139.0" layoutY="396.0" prefHeight="172.0" prefWidth="862.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="buttonStatistiche" mnemonicParsing="false" onAction="#visualizzaStatistiche" style="-fx-background-color: #23ad5a;" text="Le mie statistiche" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -33,11 +33,13 @@ public class GestioneListaAllenatoreController implements IGestioneListaAllenato
 			statement = connection.prepareStatement(getAllenatori);
 			statement.setString(1, username);
 			ResultSet rs = statement.executeQuery();
-			if(rs.next()) {
+			while(rs.next()) {
 				uA = rs.getString("username_allenatore");
 				n = rs.getString("nome");
 				c = rs.getString("cognome");
 				a = new Allenatore(uA,n,c);
+				a.setCategoria(rs.getString("categoria"));
+				a.setValutazioneMedia(rs.getFloat("valutazioneMedia"));
 				result.add(a);
 			}
 			return result;
