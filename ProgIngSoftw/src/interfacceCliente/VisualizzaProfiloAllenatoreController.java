@@ -20,11 +20,11 @@ public class VisualizzaProfiloAllenatoreController implements IVisualizzaProfilo
 	
 	private static final String dati_allenatore="SELECT nome,cognome FROM USERS WHERE USERNAME = ?";
 	
-	private static final String lista_allenamenti_caricati="SELECT A.username,U.nome,U.cognome,AL.durata,AL.categoria,AL.file,AL.titolo "
+	private static final String lista_allenamenti_caricati="SELECT A.username,U.nome,U.cognome,AL.durata,AL.categoria,AL.file,AL.titolo,AL.calorie,AL.difficolta "
 			+ "FROM ALLENAMENTI AL,ALLENATORI A,USERS U "
 			+ "WHERE AL.USERNAME=A.USERNAME "
 			+ "AND AL.USERNAME = ? "
-			+ "AND al.USERNAME =u.USERNAME ";
+			+ "AND AL.USERNAME =U.USERNAME ";
 	
 	private static final String valutazione_allenatore="SELECT valutazioneMedia FROM Allenatori WHERE USERNAME = ? ";
 	
@@ -49,7 +49,7 @@ public class VisualizzaProfiloAllenatoreController implements IVisualizzaProfilo
 					Allenatore allenatore=new Allenatore(usernameAll, rs.getString("nome"), rs.getString("cognome"));
 					a=new Allenamento(rs.getString("titolo"), rs.getInt("durata"), 
 							rs.getString("categoria"), rs.getInt("calorie"), new File(rs.getString("file")),
-							LivelloDifficolta.valueOf(rs.getString("difficolta")),allenatore);
+							LivelloDifficolta.valueOf(rs.getString("difficolta").toUpperCase()),allenatore);
 					
 					result.add(a);
 				}while(rs.next());

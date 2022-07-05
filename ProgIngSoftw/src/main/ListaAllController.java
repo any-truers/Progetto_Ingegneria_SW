@@ -12,11 +12,15 @@ import interfacceCliente.GestioneListaAllenatoreController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
@@ -46,13 +50,13 @@ public class ListaAllController implements Initializable {
 
 	@FXML
 	void returnHome(ActionEvent event) throws IOException {
-		
+
 		sceneController.goHome(event);
-		
+
 	}
 
 	@FXML
-	void visualizzaProfilo(ActionEvent event) {
+	void visualizzaProfilo(ActionEvent event) throws IOException {
 
 	}
 
@@ -60,7 +64,7 @@ public class ListaAllController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		GestioneListaAllenatoreController contr = new GestioneListaAllenatoreController();
-		
+
 		List<Allenatore> res = null;
 		try {
 			res = contr.getAllenatoriSeguiti(SceneController.username);
@@ -68,18 +72,27 @@ public class ListaAllController implements Initializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(SceneController.username);
+		
 		if (res != null && !res.isEmpty()) {
-			System.out.println("QUI");
+			
 			buttons = new ArrayList<>();
 			int r = 2;
 			int valutazione = 0;
-			
+
 			gridPane.setHgap(10);
 			gridPane.setVgap(10);
 			gridPane.setAlignment(Pos.TOP_LEFT);
 			for (Allenatore a : res) {
-				System.out.println(a.getCategoria());
+				
+				StackPane stackPaneforProfiloActivity = new StackPane();
+				Image profilo = new Image("file:view/user1.jpg");
+				ImageView viewProfilo = new ImageView(profilo);
+				viewProfilo.setFitWidth(46);
+				viewProfilo.setFitHeight(44);
+				stackPaneforProfiloActivity.getChildren().add(viewProfilo);
+				stackPaneforProfiloActivity.setMargin(viewProfilo, new Insets(0,0,0,5));
+				gridPane.add(stackPaneforProfiloActivity, 0, r);
+				
 				Label nome = new Label();
 				nome.setFont(new Font("System", 17));
 				Label categoria = new Label();
@@ -89,52 +102,88 @@ public class ListaAllController implements Initializable {
 				gridPane.add(nome, 1, r);
 				gridPane.add(categoria, 2, r);
 				valutazione = Math.round(a.getValutazione());
-				/*if (valutazione == 0) {
-					
-					Image im = new Image("/manubri.png");
-					ImageView iv = new ImageView();
-					iv.setImage(im);
-					gridPane.add(iv, 3, r);
+				
+				ImageView iv = new ImageView();
+				HBox boxIm = new HBox();
+				boxIm.setPrefWidth(183);
+				boxIm.setPrefHeight(42);
+				if (valutazione == 0) {
 
 				} else if (valutazione == 1) {
-					
-					Image im = new Image("/manubri.png");
-					ImageView iv = new ImageView();
-					iv.setImage(im);
-					gridPane.add(iv, 3, r);
-					
+					Image im = new Image("file:view/manubri.png");
+
+					StackPane stackPaneforImageActivity = new StackPane();
+					iv = new ImageView(im);
+					iv.setRotate(90);
+					iv.setFitHeight(41);
+					iv.setFitWidth(55);
+					boxIm.getChildren().add(stackPaneforImageActivity);
+					stackPaneforImageActivity.getChildren().add(iv);
+					stackPaneforImageActivity.setMargin(iv, new Insets(0,0,0,-15));
+
 				} else if (valutazione == 2) {
+
 					
-					Image im = new Image("/manubri.png");
-					ImageView iv = new ImageView();
-					iv.setImage(im);
-					gridPane.add(iv, 3, r);
+					Image im = new Image("file:view/manubri.png");
+					for (int i = 0; i < 2; i++) {
+						StackPane stackPaneforImageActivity = new StackPane();
+						iv = new ImageView(im);
+						iv.setRotate(90);
+						iv.setFitHeight(41);
+						iv.setFitWidth(55);
+						boxIm.getChildren().add(stackPaneforImageActivity);
+						stackPaneforImageActivity.getChildren().add(iv);
+						stackPaneforImageActivity.setMargin(iv, new Insets(0,0,0,-15));
+					}
 
 				} else if (valutazione == 3) {
-					
-					Image im = new Image("/manubri.png");
-					ImageView iv = new ImageView();
-					iv.setImage(im);
-					gridPane.add(iv, 3, r);
+
+					Image im = new Image("file:view/manubri.png");
+					for (int i = 0; i < 3; i++) {
+						StackPane stackPaneforImageActivity = new StackPane();
+						iv = new ImageView(im);
+						iv.setRotate(90);
+						iv.setFitHeight(41);
+						iv.setFitWidth(55);
+						boxIm.getChildren().add(stackPaneforImageActivity);
+						stackPaneforImageActivity.getChildren().add(iv);
+						stackPaneforImageActivity.setMargin(iv, new Insets(0,0,0,-15));
+					}
 
 				} else if (valutazione == 4) {
-					
-					Image im = new Image("/manubri.png");
-					ImageView iv = new ImageView();
-					iv.setImage(im);
-					gridPane.add(iv, 3, r);
+
+					Image im = new Image("file:view/manubri.png");
+					for (int i = 0; i < 4; i++) {
+						StackPane stackPaneforImageActivity = new StackPane();
+						iv = new ImageView(im);
+						iv.setRotate(90);
+						iv.setFitHeight(41);
+						iv.setFitWidth(55);
+						boxIm.getChildren().add(stackPaneforImageActivity);
+						stackPaneforImageActivity.getChildren().add(iv);
+						stackPaneforImageActivity.setMargin(iv, new Insets(0,0,0,-15));
+					}
 
 				} else if (valutazione == 5) {
+
+					Image im = new Image("file:view/manubri.png");
 					
-					Image im = new Image("/manubri.png");
-					ImageView iv = new ImageView();
-					iv.setImage(im);
-					gridPane.add(iv, 3, r);
-				}*/
-				
+					for (int i = 0; i < 5; i++) {
+						StackPane stackPaneforImageActivity = new StackPane();
+						iv = new ImageView(im);
+						iv.setRotate(90);
+						iv.setFitHeight(41);
+						iv.setFitWidth(55);
+						boxIm.getChildren().add(stackPaneforImageActivity);
+						stackPaneforImageActivity.getChildren().add(iv);
+						stackPaneforImageActivity.setMargin(iv, new Insets(0,0,0,-15));
+					}
+
+				}
+				gridPane.add(boxIm, 3, r);
 				Button b = new Button();
 				b.setFont(new Font("System", 15));
-				b. setStyle("-fx-background-color:  #23ad5a;");
+				b.setStyle("-fx-background-color:  #23ad5a;");
 				b.setText("Visualizza profilo");
 				b.setTextFill(Color.WHITE);
 				b.setId(a.getUsername());
@@ -145,12 +194,22 @@ public class ListaAllController implements Initializable {
 			}
 		}
 	}
-	
+
 	private void viewProfilo(ActionEvent event) {
-		
+
 		Button b = (Button) event.getSource();
 		String usernameProfilo = b.getId();
-		System.out.println("USERNAME: " + usernameProfilo);
+		
+
+		try {
+			SceneController.profiloAllenatoreView = usernameProfilo;
+			sceneController.goProfiloAllenatore(event);
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 }

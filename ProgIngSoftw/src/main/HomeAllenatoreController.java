@@ -36,8 +36,8 @@ public class HomeAllenatoreController implements Initializable{
     private Button buttonStatistiche;
 
     @FXML
-    void aggiungiAllenamento(ActionEvent event) {
-
+    void aggiungiAllenamento(ActionEvent event) throws IOException {
+    	sceneController.goAddAllenamento(event);
     }
 
     @FXML

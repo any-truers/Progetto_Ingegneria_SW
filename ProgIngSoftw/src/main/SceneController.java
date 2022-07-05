@@ -16,6 +16,8 @@ public class SceneController {
 	private Scene scene;
 	public static String username = null;
 	public static String tipo = null;
+	public static String profiloAllenatoreView = null;
+	public static String userCategoria = null;
 
 	public void goLogin(ActionEvent event) throws IOException {
 
@@ -48,6 +50,29 @@ public class SceneController {
 		stage.setTitle("MyFit");
 		stage.show();
 
+	}
+	
+	
+	public void goProfiloAllenatore(ActionEvent event) throws IOException {
+
+		root = FXMLLoader.load(getClass().getResource("/main/Prog_ProfiloAllenatore.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.setTitle("MyFit");
+		stage.show();
+		
+	}
+	
+	public void goAddAllenamento(ActionEvent event) throws IOException {
+
+		root = FXMLLoader.load(getClass().getResource("/main/Prog_AggiungiAll.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.setTitle("MyFit");
+		stage.show();
+		
 	}
 	
 	public void goHome(ActionEvent event) throws IOException {

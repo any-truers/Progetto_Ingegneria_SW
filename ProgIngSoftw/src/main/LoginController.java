@@ -46,7 +46,7 @@ public class LoginController implements Initializable {
 					
 					SceneController.username = textUsername.getText();
 					SceneController.tipo = "cliente";
-
+					
 				}
 				else if (res.equals("allenatore")) {
 					
